@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 import mysql.connector
 
 # ---- Connect to database ----
@@ -23,7 +24,7 @@ def resources_menu():
     
     if not categories:
         print("\nNo resources available.")
-        input("\nPress Enter to return...")
+        input("\nPress Enter to return to Main Menu...")
         return
     
     # Display categories
@@ -53,13 +54,3 @@ def resources_menu():
         print(f"  {resource['content']}\n")
     
     input("Press Enter to continue...")
-
-
-# ---- Main Entry Point (for testing) ----
-if __name__ == "__main__":
-    try:
-        resources_menu()
-    finally:
-        if conn:
-            conn.close()
-

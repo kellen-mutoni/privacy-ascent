@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 import mysql.connector
 
 # ---- Connect to your database ----
@@ -57,7 +58,7 @@ def record_mood(user_id, mood_rating, notes=""):
                 print("Your mood is at or above your average. Keep up the positive energy!\n")
             else:
                 # Current mood is below average - supportive message
-                print("We notice you're feeling a bit down today.")
+                print("We notice you're feeling a bit down today.\n")
                 print("Remember, it's okay to have tough days. Here are some things you can try:")
                 print("  - Talk to someone you trust")
                 print("  - Take a short walk or do light exercise")

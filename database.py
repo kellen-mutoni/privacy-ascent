@@ -26,20 +26,6 @@ def create_database():
             )
         """)
 
-        # Cases table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS cases (
-                case_id INT AUTO_INCREMENT PRIMARY KEY,
-                user_id INT,
-                case_type VARCHAR(75) NOT NULL,
-                description TEXT,
-                anonymous BOOLEAN DEFAULT FALSE,
-                date_reported DATETIME DEFAULT CURRENT_TIMESTAMP,
-                location VARCHAR(255) NOT NULL,
-                FOREIGN KEY (user_id) REFERENCES users(user_id)
-            )
-        """)
-
         # Resources table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS resources (

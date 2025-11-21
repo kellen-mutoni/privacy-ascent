@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 import mysql.connector
 
 # ---- Connect to your database ----
@@ -19,10 +20,10 @@ def register(username, password, age=None, gender=None):
             (username, password, age, gender)
         )
         conn.commit()
-        print("----- Registration successful! -----\n")
+        print("\n----- Registration successful! -----\n")
         return login(username, password)
     except mysql.connector.IntegrityError:
-        print("----- Username already exists! -----")
+        print("\n----- Username already exists! -----")
         return None
 
 # ---- Login function ----
@@ -33,7 +34,7 @@ def login(username, password):
     )
     user = cursor.fetchone()
     if user:
-        print(f"----- Login successful! Welcome, {user['username']} -----")
+        print(f"\n----- Login successful! Welcome, {user['username']} -----")
         return user
     print("----- Invalid username or password! -----")
     return None
